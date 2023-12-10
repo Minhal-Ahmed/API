@@ -22,6 +22,7 @@ app.get('/products',async(req,res)=>{
     }catch(error){
         res.status(500).json({message:error.message})
     }
+    
 })
 
 app.get('/products/:id',async(req,res)=>{
@@ -74,7 +75,7 @@ app.delete('/products/:id',async(req,res)=>{
             return res.status(404).json({message:'Cannot find any product with ID ${id}'})
         }
     res.status(200).json(product);
-    
+
     }catch(error){
         res.status(500).json({message:error.message})
 
